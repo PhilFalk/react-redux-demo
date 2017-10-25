@@ -1,19 +1,21 @@
-import React from "react";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Button, FormControl, Col, Row } from 'react-bootstrap';
 
-// app component
-export default class Todo extends React.Component {
-  // render
+export default class Todo extends Component {
+  constructor (props, context) {
+    super(props, context);
+  }
 
-  onButtonClick() {
-    console.log('test click')
+  onButtonClick = () => {
+    console.log('new test click')
   }
 
   render() {
     return (
       <div className="container">
         <br/>
-
         <Row>
         <Col xs={3}>
             <FormControl
@@ -22,7 +24,6 @@ export default class Todo extends React.Component {
                 bsSize="sm"
             />
         </Col>
-
         <Col xs={9}>
             <Button bsStyle="default" bsSize="small" onClick={this.onButtonClick}>
                 Add
