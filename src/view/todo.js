@@ -12,7 +12,7 @@ class Todo extends Component {
   }
 
   onButtonClick = () => {
-    console.log('new test click')
+    this.props.todoActions.addTodoItem();
   }
 
   handleChange = (event) => {
@@ -21,6 +21,9 @@ class Todo extends Component {
   }
 
   render() {
+    console.log('render todo');
+    console.log(this.props.todo);
+
     return (
       <div className="container">
         <br/>
@@ -31,7 +34,7 @@ class Todo extends Component {
               placeholder="Enter text"
               bsSize="sm"
               onChange={this.handleChange}
-              defaultValue={this.props.todo.text}
+              value={this.props.todo.text}
             />
           </Col>
           <Col xs={9}>
