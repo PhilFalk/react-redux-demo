@@ -30,6 +30,7 @@ class Todo extends Component {
               placeholder="Enter text"
               bsSize="sm"
               onChange={this.handleChange}
+              defaultValue={this.props.todo.text}
             />
           </Col>
           <Col xs={9}>
@@ -45,7 +46,7 @@ class Todo extends Component {
 
 function mapStateToProps(state) {
   return {
-
+    todo: state.todo,
   }
 }
 
