@@ -8,8 +8,9 @@ class TodoList extends Component {
 
   getListItems() {
     return this.props.todo.listItems.map((item, index) => {
+      const textDec = (item.isDone) ? { 'textDecoration': 'line-through' } : {};
       return (
-        <div key={index}> {item.itemText} </div>
+        <div key={index}> <Checkbox> <div style={textDec}> {item.itemText} </div> </Checkbox> </div>
       )
     });
   }
