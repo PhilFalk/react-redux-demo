@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Button, FormControl, Col, Row } from 'react-bootstrap';
 import todoActions from '../actions/todoActions';
+import TodoList from './component/TodoList';
 
 class Todo extends Component {
 
@@ -37,6 +38,12 @@ class Todo extends Component {
             <Button bsStyle="default" bsSize="small" onClick={this.onButtonClick}>
               Add
             </Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <br/>
+            <TodoList />
           </Col>
         </Row>
       </div>
