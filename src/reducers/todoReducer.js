@@ -8,6 +8,12 @@ export default function todoReducer(state = defaultState.todo, action) {
     case types.ADD_TODO_ITEM:
       return {...state,
         listItems: [...state.listItems, {itemText: action.text, isDone: false}]};
+    case types.SET_ITEM_DONE:
+      const item = state.listItems[action.itemIndex];
+      const newItem = {...item, isDone: !item.isDone};
+      const newList = state.listItems.slice();
+      newList[action.itemIndex] = newItem;
+      return {...state, listItems: newList};
     default:
       return state;
   }

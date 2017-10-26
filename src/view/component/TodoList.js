@@ -6,11 +6,20 @@ import todoActions from '../../actions/todoActions';
 
 class TodoList extends Component {
 
+  onCheckboxChange = (itemIndex) => {
+    this.props.todoActions.setItemDone(itemIndex);
+  }
+
   getListItems() {
     return this.props.todo.listItems.map((item, index) => {
-      const textDec = (item.isDone) ? { 'textDecoration': 'line-through' } : {};
+      const textDec = (item.isDone) ? { textDecoration: 'line-through' } : {};
       return (
-        <div key={index}> <Checkbox> <div style={textDec}> {item.itemText} </div> </Checkbox> </div>
+        <div key={index}> 
+          <Checkbox checked={item.isDone}
+            onChange={this.onCheckboxChange.bind(this, index)} >
+            <div style={textDec}> {item.itemText} </div> 
+          </Checkbox> 
+        </div>
       )
     });
   }

@@ -13,5 +13,11 @@ export default {
       dispatch({ type: types.ADD_TODO_ITEM, text });
       dispatch({ type: types.SET_TODO_TEXT, text: '' });
     }
-  }
+  },
+
+  setItemDone: (itemIndex) => {
+    return (dispatch, getState) => {
+      dispatch({ type: types.SET_ITEM_DONE, itemIndex });
+    }
+  },
 }
