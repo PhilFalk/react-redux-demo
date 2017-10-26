@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Button, FormControl, Col, Row } from 'react-bootstrap';
+import todoActions from '../actions/todoActions';
 
-export default class Todo extends Component {
+class Todo extends Component {
+
   constructor (props, context) {
     super(props, context);
   }
@@ -12,25 +14,45 @@ export default class Todo extends Component {
     console.log('new test click')
   }
 
+  handleChange = (event) => {
+    const text = event.target.value;
+    this.props.todoActions.setTodoText(text);
+  }
+
   render() {
     return (
-      <div className="container">
+      <div className="container phil">
         <br/>
         <Row>
-        <Col xs={3}>
+          <Col xs={3}>
             <FormControl
-                type="text"
-                placeholder="Enter text"
-                bsSize="sm"
+              type="text"
+              placeholder="Enter text"
+              bsSize="sm"
+              onChange={this.handleChange}
             />
-        </Col>
-        <Col xs={9}>
+          </Col>
+          <Col xs={9}>
             <Button bsStyle="default" bsSize="small" onClick={this.onButtonClick}>
-                Add
+              Add
             </Button>
-        </Col>
+          </Col>
         </Row>
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+      todoActions: bindActionCreators(todoActions, dispatch),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Todo);
