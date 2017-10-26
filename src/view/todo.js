@@ -21,9 +21,6 @@ class Todo extends Component {
   }
 
   render() {
-    console.log('render todo');
-    console.log(this.props.todo);
-
     return (
       <div className="container">
         <br/>
