@@ -21,7 +21,7 @@ class Todo extends Component {
 
   render() {
     return (
-      <div className="container phil">
+      <div className="container">
         <br/>
         <Row>
           <Col xs={3}>
@@ -52,7 +52,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-      todoActions: bindActionCreators(todoActions, dispatch),
+    todoActions: bindActionCreators(todoActions, dispatch),
   }
 }
 
