@@ -21,3 +21,5 @@ Browse to:
 http://localhost:8080
 ```
 
+Download [React + Redux slides](https://github.com/PhilFalk/react-redux-demo/blob/master/notes/React%20%2B%20Redux.pptx)
+
