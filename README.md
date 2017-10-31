@@ -1,7 +1,23 @@
-# React Redux Demo
+# ToDo App + Redux Demo
 
-TODO Application Demo
+Prerequisites:
+- Install [Git](https://git-scm.com/downloads)
+- Install [Node](https://nodejs.org/en/)
 
+
+To start app open terminal and run:
 ```sh
+git clone https://github.com/PhilFalk/react-redux-demo.git react-redux-demo
+
+cd react-redux-demo
+
+npm install
+
 npm start
 ```
+
+Browse to:
+```sh
+http://localhost:8080
+```
+
