@@ -6,11 +6,7 @@ import todoActions from '../actions/todoActions';
 import TodoList from './component/TodoList';
 
 class Todo extends Component {
-
-  constructor (props, context) {
-    super(props, context);
-  }
-
+  
   onButtonClick = () => {
     this.props.todoActions.addTodoItem();
   }
