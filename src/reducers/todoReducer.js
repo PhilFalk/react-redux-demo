@@ -14,7 +14,7 @@ A single reducer can be created for a group of related actions.
 
 When an action is dispatched the reducer will handle the action.
 
-It is the job of the reducer to take a single action and data and transform or 'reduce'
+It is the job of the reducer to take a single action with data and transform or 'reduce'
 the data to a new object that represents a state change in the application.
 
 */
