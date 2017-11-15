@@ -54,20 +54,14 @@ class Todo extends Component {
 /*
 This function maps properties on the global store to properties on the component
 */
-function mapStateToProps(state) {
-  return {
-    todo: state.todo,
-  }
-}
+const mapStateToProps = state => ({todo: state.todo});
 
 /*
 This function maps actions to properties on the component
 */
-function mapDispatchToProps(dispatch) {
-  return {
-    todoActions: bindActionCreators(todoActions, dispatch),
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  todoActions: bindActionCreators(todoActions, dispatch),
+})
 
 /* 
 connect the global store and actions to the component 
