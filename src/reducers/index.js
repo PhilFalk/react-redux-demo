@@ -11,8 +11,8 @@ This will register the reducer so that it is available for listening to actions.
 
 The reducer function then returns the new state object to the specified property key.
 
-So 'todo' is property key on the global store (referenced through this.state) 
-that will contain the todoReducer function output.
+So 'todo' is property on the global store (state object) that will contain the todoReducer 
+function output.
 */
 export const reducers = combineReducers({
   routing: routerReducer,
