@@ -7,10 +7,6 @@ import TodoList from './component/TodoList';
 
 class Todo extends Component {
   
-  onButtonClick = () => {
-    this.props.todoActions.addTodoItem();
-  }
-
   handleChange = (event) => {
     const text = event.target.value;
     this.props.todoActions.setTodoText(text);
@@ -31,7 +27,8 @@ class Todo extends Component {
             />
           </Col>
           <Col xs={9}>
-            <Button bsStyle="default" bsSize="small" onClick={this.onButtonClick}>
+            <Button bsStyle="default" bsSize="small" 
+              onClick={() => this.props.todoActions.addTodoItem()}>
               Add
             </Button>
           </Col>
