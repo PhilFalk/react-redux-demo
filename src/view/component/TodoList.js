@@ -16,7 +16,7 @@ class TodoList extends Component {
       return (
         <div key={index}> 
           <Checkbox checked={item.isDone}
-            onChange={this.onCheckboxChange.bind(this, index)} >
+            onChange={() => this.onCheckboxChange(index)} >
             <div style={textDec}> {item.itemText} </div> 
           </Checkbox> 
         </div>
